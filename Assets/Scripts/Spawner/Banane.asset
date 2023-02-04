@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17d76bacb575e84684ffe589471738e, type: 3}
+  m_Name: Banane
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: Banane
+  <model>k__BackingField: {fileID: 8457980747927637728, guid: dbbf2853581ae3e4ab76ab3b7426cdbb,
+    type: 3}
+  <points>k__BackingField: 10
+  <heaviness>k__BackingField: 0.5
