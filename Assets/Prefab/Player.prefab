@@ -54,7 +54,7 @@ MonoBehaviour:
   <inputReader>k__BackingField: {fileID: 9118794260591094505}
   <movement>k__BackingField: {fileID: 6566287422441108172}
   <agent>k__BackingField: {fileID: 2386429635483570475}
-  <PickUpPoint>k__BackingField: {fileID: 8251225938334584852}
+  <PickUpPoint>k__BackingField: {fileID: 4285184393424021953}
   <PickupRadar>k__BackingField: {fileID: 8321099983496579566}
 --- !u!114 &9118794260591094505
 MonoBehaviour:
