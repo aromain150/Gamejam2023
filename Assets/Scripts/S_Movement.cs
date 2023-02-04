@@ -16,6 +16,7 @@ public class S_Movement : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        agent.destination = transform.position + (direction.y *Vector3.forward) + (direction.x * Vector3.right); /*transform.forward.normalized) + (direction.x * transform.right.normalized);*/
-    }                   
+        agent.destination = transform.position + (direction.y * camTransform.forward.normalized) + (direction.x * camTransform.right.normalized);
+    }
+
 }

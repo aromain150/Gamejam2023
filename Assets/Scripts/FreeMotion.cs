@@ -5,6 +5,9 @@ using UnityEngine.Animations;
 
 public class FreeMotion : PlayerBaseState
 {
+
+    SO_Pickup currentPickupSpawner;
+
     public FreeMotion(S_PlayerStateMachine stateMachine) : base(stateMachine)
     {
 
@@ -27,10 +30,9 @@ public class FreeMotion : PlayerBaseState
 
     public void Move(float deltatime)
     {
-        Debug.Log(stateMachine.inputReader.MovementValue);
-        Debug.Log(stateMachine.movement);
-        stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
-
+         stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
+        //Debug.Log(stateMachine.inputReader.MovementValue);
+   
     }
 
     private void Animate(float deltatime)
@@ -40,7 +42,15 @@ public class FreeMotion : PlayerBaseState
 
     public void Attack()
     {
-    
+        if (stateMachine.PickupRadar.currentPickUpSpawner != null)
+        {
+            currentPickupSpawner = stateMachine.PickupRadar.currentPickUpSpawner.GetPickup();
+            if (currentPickupSpawner != null) 
+            {
+                Debug.Log("StartSwitch");
+                stateMachine.SwitchState(new HoldMotion(stateMachine,currentPickupSpawner));
+            }
+        }
     }
 
 }

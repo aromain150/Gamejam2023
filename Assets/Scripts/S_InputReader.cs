@@ -40,4 +40,5 @@ public class S_InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         AttackEvent?.Invoke();
     }
+
 }
