@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class S_PickupPoint : MonoBehaviour
 {
-    bool hasModel = false;
+    [SerializeField]bool hasModel = false;
     GameObject currentModel;
 
     public void AddModel(GameObject model)
     {
+        
         if (hasModel) return;
         currentModel = Instantiate(model,transform);
         hasModel = true;

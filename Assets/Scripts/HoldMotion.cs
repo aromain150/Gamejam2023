@@ -11,27 +11,35 @@ public class HoldMotion : PlayerBaseState
 
     SO_Pickup currentPickup; 
 
+
     public override void Enter()
     {
         //    stateMachine.PickUpPoint = currentPickup
 
-        stateMachine.inputReader.AttackEvent += Release;
+        stateMachine.inputReader.ReleaseEvent += Release;
 
         stateMachine.PickUpPoint.AddModel(currentPickup.model);
     }
 
     public override void Exit()
     {
-        
+        stateMachine.inputReader.ReleaseEvent -= Release;
     }
 
     public override void Tick(float deltatime)
     {
-        
+        Move(deltatime);
+    }
+
+    public void Move(float deltatime)
+    {
+        stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
+
     }
 
     public void Release()
     {
+        Debug.Log("HEY");
         stateMachine.PickUpPoint.RemoveModel();
         stateMachine.SwitchState(new FreeMotion(stateMachine));
     }

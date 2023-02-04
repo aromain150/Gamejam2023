@@ -31,7 +31,6 @@ public class FreeMotion : PlayerBaseState
     public void Move(float deltatime)
     {
          stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
-        //Debug.Log(stateMachine.inputReader.MovementValue);
    
     }
 

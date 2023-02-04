@@ -11,6 +11,7 @@ public class S_InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public event Action AttackEvent;
     public event Action LookEvent;
+    public event Action ReleaseEvent;
 
     private Controls controls;
 
@@ -41,4 +42,8 @@ public class S_InputReader : MonoBehaviour, Controls.IPlayerActions
         AttackEvent?.Invoke();
     }
 
+    public void OnRelease(InputAction.CallbackContext context)
+    {
+        ReleaseEvent?.Invoke();
+    }
 }
