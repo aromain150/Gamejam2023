@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e17d76bacb575e84684ffe589471738e, type: 3}
-  m_Name: Carotte
+  m_Name: Fraise
   m_EditorClassIdentifier: 
-  <id>k__BackingField: Carotte
-  <model>k__BackingField: {fileID: 800398599876830177, guid: e3e5aa5abb039ec42beacecf7b740eb9,
+  <id>k__BackingField: Fraise
+  <model>k__BackingField: {fileID: 6014127500371788283, guid: ffd682220d352db4784ce45dd306bba8,
     type: 3}
   <points>k__BackingField: 5
-  <heaviness>k__BackingField: 1
+  <heaviness>k__BackingField: 0

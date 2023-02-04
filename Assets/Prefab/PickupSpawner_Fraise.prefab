@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1619018295985106309}
   - component: {fileID: 5125165489565554604}
   m_Layer: 0
-  m_Name: PickupSpawner_Tomate
+  m_Name: PickupSpawner_Fraise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1619018294753659503}
-  - {fileID: 2611961051090457952}
+  - {fileID: 6823327472184441640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10068e2b9bba8ea44805f86ed15fb496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: {fileID: 11400000, guid: f29e30ead45d28e4596feae4b42b598d, type: 2}
+  pickup: {fileID: 11400000, guid: d888592411833e14f81e686f08e12aea, type: 2}
   spawnpoint: {fileID: 1619018294753659503}
 --- !u!114 &5125165489565554604
 MonoBehaviour:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d32468fc4b09b2409873fc687f0e04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventName: Spawn_Tomate
+  EventName: Spawn_Fraise
   OnMMGameEvent:
     m_PersistentCalls:
       m_Calls:
@@ -108,7 +108,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1001 &2573021868510048907
+--- !u!1001 &6429993830703619267
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -182,9 +182,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1102a23e5687dd4e8eee4b734ec554b, type: 3}
---- !u!4 &2611961051090457952 stripped
+--- !u!4 &6823327472184441640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e1102a23e5687dd4e8eee4b734ec554b,
     type: 3}
-  m_PrefabInstance: {fileID: 2573021868510048907}
+  m_PrefabInstance: {fileID: 6429993830703619267}
   m_PrefabAsset: {fileID: 0}
