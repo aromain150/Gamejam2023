@@ -39,7 +39,7 @@ public class HoldMotion : PlayerBaseState
 
     public void Release()
     {
-        Debug.Log("HEY");
+        stateMachine.interact.InteractWithTerrier(currentPickup.points);
         stateMachine.PickUpPoint.RemoveModel();
         stateMachine.SwitchState(new FreeMotion(stateMachine));
     }

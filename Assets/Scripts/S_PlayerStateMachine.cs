@@ -12,11 +12,12 @@ public class S_PlayerStateMachine : SA_StateMachine
     [field : SerializeField] public NavMeshAgent agent { get; private set; }
     [field : SerializeField] public S_PickupPoint PickUpPoint { get; private set; }
     [field : SerializeField] public S_PickupRadar PickupRadar { get; private set; }
+    [field : SerializeField] public S_Interact interact { get; private set; }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        SwitchState(new FreeMotion(this)); 
+        SwitchState(new NoMotion(this)); 
     }
 }
