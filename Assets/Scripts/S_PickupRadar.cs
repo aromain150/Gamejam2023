@@ -8,6 +8,7 @@ public class S_PickupRadar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.TryGetComponent(out PickupSpawner pickup))
         {
             currentPickUpSpawner = pickup;

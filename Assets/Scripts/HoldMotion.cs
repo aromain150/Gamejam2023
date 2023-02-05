@@ -6,19 +6,18 @@ public class HoldMotion : PlayerBaseState
 {
     public HoldMotion(S_PlayerStateMachine stateMachine,SO_Pickup pickupItem) : base(stateMachine)
     {
-        currentPickup = pickupItem;
+        stateMachine.currentPickup = pickupItem;
     }
-
-    SO_Pickup currentPickup; 
-
-
+ 
     public override void Enter()
     {
         //    stateMachine.PickUpPoint = currentPickup
 
+        stateMachine.agent.speed = stateMachine.defaultSpeed-stateMachine.currentPickup.heaviness;
+
         stateMachine.inputReader.ReleaseEvent += Release;
 
-        stateMachine.PickUpPoint.AddModel(currentPickup.model);
+        stateMachine.PickUpPoint.AddModel(stateMachine.currentPickup.model);
     }
 
     public override void Exit()
@@ -34,13 +33,13 @@ public class HoldMotion : PlayerBaseState
     public void Move(float deltatime)
     {
         stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
-
     }
 
     public void Release()
     {
-        stateMachine.interact.InteractWithTerrier(currentPickup.points);
+        stateMachine.interact.InteractWithTerrier(stateMachine.currentPickup.points);
         stateMachine.PickUpPoint.RemoveModel();
+        stateMachine.currentPickup = null;
         stateMachine.SwitchState(new FreeMotion(stateMachine));
     }
 }

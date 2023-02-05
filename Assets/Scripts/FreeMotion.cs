@@ -6,8 +6,6 @@ using UnityEngine.Animations;
 public class FreeMotion : PlayerBaseState
 {
 
-    SO_Pickup currentPickupSpawner;
-
     public FreeMotion(S_PlayerStateMachine stateMachine) : base(stateMachine)
     {
 
@@ -15,6 +13,8 @@ public class FreeMotion : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.agent.speed = stateMachine.defaultSpeed;
+
         stateMachine.inputReader.AttackEvent += Attack;
     }
 
@@ -30,8 +30,7 @@ public class FreeMotion : PlayerBaseState
 
     public void Move(float deltatime)
     {
-         stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
-   
+        stateMachine.movement.Move(stateMachine.inputReader.MovementValue);
     }
 
     private void Animate(float deltatime)
@@ -41,15 +40,21 @@ public class FreeMotion : PlayerBaseState
 
     public void Attack()
     {
+
+        SO_Pickup pickup = stateMachine.interact.StealFromPlayers(stateMachine);
+        if (pickup!= null)
+        {
+            stateMachine.SwitchState(new HoldMotion(stateMachine, pickup));
+            return;
+        }
+
         if (stateMachine.PickupRadar.currentPickUpSpawner != null)
         {
-            currentPickupSpawner = stateMachine.PickupRadar.currentPickUpSpawner.GetPickup();
-            if (currentPickupSpawner != null) 
+            pickup = stateMachine.PickupRadar.currentPickUpSpawner.GetPickup();
+            if (pickup != null) 
             {
-                Debug.Log("StartSwitch");
-                stateMachine.SwitchState(new HoldMotion(stateMachine,currentPickupSpawner));
+                stateMachine.SwitchState(new HoldMotion(stateMachine, pickup));
             }
         }
     }
-
 }

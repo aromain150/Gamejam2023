@@ -33,7 +33,7 @@ public class PickupSpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartSpawnSequence();
+        ScoreManager.Instance.OnGameStarted += StartSpawnSequence;
     }
 
     // Update is called once per frame

@@ -22,9 +22,10 @@ public class ScoreManager : MonoBehaviour
     [field: SerializeField] public int ScorePlayer1 { get; private set; }
     [field: SerializeField] public int ScorePlayer2 { get; private set; }
     [field: SerializeField] public float timeLeft { get; private set; }
-    public bool startCountDown;
+    bool startCountDown;
 
     public delegate void ScoreManagerDelegate();
+    public ScoreManagerDelegate OnGameStarted;
     public ScoreManagerDelegate OnGameFinished;
     public ScoreManagerDelegate OnScoreChange;
 
@@ -69,6 +70,12 @@ public class ScoreManager : MonoBehaviour
         {
             CountDown();
         }
+    }
+
+    public void StartCountDown()
+    {
+        startCountDown = true;
+        OnGameStarted?.Invoke();
     }
 
     private void CountDown()

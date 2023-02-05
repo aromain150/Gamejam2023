@@ -20,5 +20,20 @@ public class S_Interact : MonoBehaviour
         }
     }
 
+    public SO_Pickup StealFromPlayers(S_PlayerStateMachine sender)
+    {
+        Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale, Quaternion.identity);
+        int i = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (i < hitColliders.Length)
+        {
+            if (hitColliders[i].TryGetComponent(out S_PlayerStateMachine player))
+            {
+                if (player.gameObject != sender) return player.LoosePickup(); 
+            }
+            i++;
+        }
+        return null;
+    }
 
 }
