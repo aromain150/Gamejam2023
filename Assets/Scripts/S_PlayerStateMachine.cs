@@ -13,6 +13,7 @@ public class S_PlayerStateMachine : SA_StateMachine
     [field : SerializeField] public S_PickupPoint PickUpPoint { get; private set; }
     [field : SerializeField] public S_PickupRadar PickupRadar { get; private set; }
     [field : SerializeField] public S_Interact interact { get; private set; }
+    [field : SerializeField] public S_ModelHandler modelHandler { get; private set; }
     [field : SerializeField] public float defaultSpeed { get; private set; }
 
     public SO_Pickup currentPickup;

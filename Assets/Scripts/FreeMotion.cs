@@ -14,8 +14,9 @@ public class FreeMotion : PlayerBaseState
     public override void Enter()
     {
         stateMachine.agent.speed = stateMachine.defaultSpeed;
-
         stateMachine.inputReader.AttackEvent += Attack;
+
+        stateMachine.modelHandler.SetIdle();
     }
 
     public override void Exit()

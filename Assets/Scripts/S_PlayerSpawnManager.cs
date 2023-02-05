@@ -62,9 +62,11 @@ public class S_PlayerSpawnManager : MonoBehaviour
         {
             S_PlayerStateMachine playerStateMachine = playerSlot1.GetComponent<S_PlayerStateMachine>();
             playerStateMachine.SwitchState(new FreeMotion(playerStateMachine));
+            playerStateMachine.modelHandler.SetPlayer(0);
 
             playerStateMachine = playerSlot2.GetComponent<S_PlayerStateMachine>();
             playerStateMachine.SwitchState(new FreeMotion(playerStateMachine));
+            playerStateMachine.modelHandler.SetPlayer(1);
 
             ScoreManager.Instance.StartCountDown();
             OnGameStarted?.Invoke();

@@ -13,11 +13,12 @@ public class HoldMotion : PlayerBaseState
     {
         //    stateMachine.PickUpPoint = currentPickup
 
-        stateMachine.agent.speed = stateMachine.defaultSpeed-stateMachine.currentPickup.heaviness;
-
+        stateMachine.agent.speed = stateMachine.defaultSpeed - stateMachine.currentPickup.heaviness;
         stateMachine.inputReader.ReleaseEvent += Release;
 
         stateMachine.PickUpPoint.AddModel(stateMachine.currentPickup.model);
+
+        stateMachine.modelHandler.SetHolding();
     }
 
     public override void Exit()

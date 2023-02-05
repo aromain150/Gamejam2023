@@ -11,7 +11,7 @@ public class S_UIGameDiplayer : MonoBehaviour
     [SerializeField] TextMeshProUGUI Timer;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         ScoreManager.Instance.OnScoreChange += UpdateUI;
     }
