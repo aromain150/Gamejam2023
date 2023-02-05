@@ -61,7 +61,7 @@ MonoBehaviour:
   <PickupRadar>k__BackingField: {fileID: 8321099983496579566}
   <interact>k__BackingField: {fileID: 415479247540256881}
   <modelHandler>k__BackingField: {fileID: 5584618892692953563}
-  <defaultSpeed>k__BackingField: 7
+  <defaultSpeed>k__BackingField: 9
   currentPickup: {fileID: 0}
 --- !u!114 &9118794260591094505
 MonoBehaviour:
@@ -491,10 +491,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1407563e887199c4890c580b7116edcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Idle1: {fileID: 56933338521989165}
-  Idle2: {fileID: 8779813162701093260}
-  Taken1: {fileID: 2517090274599079148}
-  Taken2: {fileID: 2344516210562447612}
+  Idle1: {fileID: 8779813162701093260}
+  Idle2: {fileID: 56933338521989165}
+  Taken1: {fileID: 2344516210562447612}
+  Taken2: {fileID: 2517090274599079148}
   playerNum: 0
 --- !u!1 &8777256875344843271
 GameObject:

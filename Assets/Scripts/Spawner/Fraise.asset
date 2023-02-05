@@ -15,5 +15,5 @@ MonoBehaviour:
   <id>k__BackingField: Fraise
   <model>k__BackingField: {fileID: 6014127500371788283, guid: ffd682220d352db4784ce45dd306bba8,
     type: 3}
-  <points>k__BackingField: 5
-  <heaviness>k__BackingField: 0
+  <points>k__BackingField: 10
+  <heaviness>k__BackingField: 3

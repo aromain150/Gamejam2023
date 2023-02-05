@@ -16,4 +16,4 @@ MonoBehaviour:
   <model>k__BackingField: {fileID: 800398599876830177, guid: e3e5aa5abb039ec42beacecf7b740eb9,
     type: 3}
   <points>k__BackingField: 20
-  <heaviness>k__BackingField: 1
+  <heaviness>k__BackingField: 5

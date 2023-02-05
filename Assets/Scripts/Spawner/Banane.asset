@@ -15,5 +15,5 @@ MonoBehaviour:
   <id>k__BackingField: Banane
   <model>k__BackingField: {fileID: 1826470716347437004, guid: 2d50b5b431d6e5f44a1f43de673693f1,
     type: 3}
-  <points>k__BackingField: 10
-  <heaviness>k__BackingField: 0.5
+  <points>k__BackingField: 5
+  <heaviness>k__BackingField: 2
