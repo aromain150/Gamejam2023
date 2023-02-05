@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Banane
   m_EditorClassIdentifier: 
   <id>k__BackingField: Banane
-  <model>k__BackingField: {fileID: 8457980747927637728, guid: dbbf2853581ae3e4ab76ab3b7426cdbb,
+  <model>k__BackingField: {fileID: 1826470716347437004, guid: 2d50b5b431d6e5f44a1f43de673693f1,
     type: 3}
   <points>k__BackingField: 10
   <heaviness>k__BackingField: 0.5
