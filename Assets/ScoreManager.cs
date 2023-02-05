@@ -97,7 +97,7 @@ public class ScoreManager : MonoBehaviour
 
         if (timeLeft<0)
         {
-            timeLeft = 90;
+            timeLeft = 0;
             startCountDown = false;
             OnGameFinished?.Invoke();
         }

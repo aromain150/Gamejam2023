@@ -18,6 +18,7 @@ public class S_GameOver : MonoBehaviour
 
     public void GameEndMessage()
     {
+        print("FINISH");
         GameoverPanel.SetActive(true);
         VictoryMessage.text = ScoreManager.Instance.GetWinner();
     }

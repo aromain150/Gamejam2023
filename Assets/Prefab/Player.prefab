@@ -61,7 +61,7 @@ MonoBehaviour:
   <PickupRadar>k__BackingField: {fileID: 8321099983496579566}
   <interact>k__BackingField: {fileID: 415479247540256881}
   <modelHandler>k__BackingField: {fileID: 5584618892692953563}
-  <defaultSpeed>k__BackingField: 3.5
+  <defaultSpeed>k__BackingField: 7
   currentPickup: {fileID: 0}
 --- !u!114 &9118794260591094505
 MonoBehaviour:

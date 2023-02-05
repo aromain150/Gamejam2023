@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations;
 
 public class S_PlayerSpawnManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class S_PlayerSpawnManager : MonoBehaviour
 
     public Transform spawn1;
     public Transform spawn2;
+
+    public PositionConstraint positionConstraint;
 
     private void Awake()
     {
@@ -55,18 +58,33 @@ public class S_PlayerSpawnManager : MonoBehaviour
         OnChange?.Invoke();
     }
 
+    S_PlayerStateMachine playerStateMachine1;
+    S_PlayerStateMachine playerStateMachine2;
+
 
     public void StartGame()
     {
         if (playerSlot1 != null && playerSlot2 != null)
         {
-            S_PlayerStateMachine playerStateMachine = playerSlot1.GetComponent<S_PlayerStateMachine>();
-            playerStateMachine.SwitchState(new FreeMotion(playerStateMachine));
-            playerStateMachine.modelHandler.SetPlayer(0);
+            playerStateMachine1 = playerSlot1.GetComponent<S_PlayerStateMachine>();
+            playerStateMachine1.SwitchState(new FreeMotion(playerStateMachine1));
+            playerStateMachine1.modelHandler.SetPlayer(0);
 
-            playerStateMachine = playerSlot2.GetComponent<S_PlayerStateMachine>();
-            playerStateMachine.SwitchState(new FreeMotion(playerStateMachine));
-            playerStateMachine.modelHandler.SetPlayer(1);
+            playerStateMachine2 = playerSlot2.GetComponent<S_PlayerStateMachine>();
+            playerStateMachine2.SwitchState(new FreeMotion(playerStateMachine2));
+            playerStateMachine2.modelHandler.SetPlayer(1);
+
+
+            ConstraintSource CS = new ConstraintSource();
+            CS.sourceTransform = playerSlot1.transform;
+            CS.weight = 1;
+            positionConstraint.AddSource(CS);
+
+            ConstraintSource CS2 = new ConstraintSource();
+            CS2.sourceTransform = playerSlot2.transform;
+            CS2.weight = 1;
+            positionConstraint.AddSource(CS2);
+
 
             ScoreManager.Instance.StartCountDown();
             OnGameStarted?.Invoke();
@@ -75,11 +93,10 @@ public class S_PlayerSpawnManager : MonoBehaviour
 
     public void EndGame()
     {
-        S_PlayerStateMachine playerStateMachine = playerSlot1.GetComponent<S_PlayerStateMachine>();
-        playerStateMachine?.SwitchState(new NoMotion(playerStateMachine));
-
-        playerStateMachine = playerSlot2.GetComponent<S_PlayerStateMachine>();
-        playerStateMachine?.SwitchState(new NoMotion(playerStateMachine));
+        foreach (S_PlayerStateMachine item in FindObjectsOfType<S_PlayerStateMachine>())
+        {
+            item.SwitchState(new NoMotion(item));
+        }
     }
 
 }
