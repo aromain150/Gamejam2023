@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class ScoreManager : MonoBehaviour
     public ScoreManagerDelegate OnGameStarted;
     public ScoreManagerDelegate OnGameFinished;
     public ScoreManagerDelegate OnScoreChange;
+    public MMF_Player Start321GOFeel;
+ 
 
     public void AddScore(int score,string team)
     {
@@ -74,8 +77,17 @@ public class ScoreManager : MonoBehaviour
 
     public void StartCountDown()
     {
+        Start321GOFeel?.PlayFeedbacks();
+
+        Invoke("StartCountDownFollowUp", 1);
+    }
+
+    public void StartCountDownFollowUp()
+    {
         startCountDown = true;
+
         OnGameStarted?.Invoke();
+
     }
 
     private void CountDown()

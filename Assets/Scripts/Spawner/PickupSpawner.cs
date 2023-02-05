@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 public class PickupSpawner : MonoBehaviour
 {
     [SerializeField]SO_Pickup pickup;
@@ -18,6 +20,7 @@ public class PickupSpawner : MonoBehaviour
         if (canPickup) return;
 
         model = Instantiate(pickup.model, spawnpoint);
+        model.transform.DOScale(Vector3.one, 0.5f).From(Vector3.zero) ;
         canPickup = true;
     }
 
